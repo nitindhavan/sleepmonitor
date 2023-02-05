@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sleepmonitor/models/notification.dart';
-import 'package:sleepmonitor/screens/home.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class Notifications extends StatefulWidget {
@@ -20,7 +19,7 @@ class _NotificationsState extends State<Notifications> {
         appBar: AppBar(title: Text(local.notifications,textAlign: TextAlign.center,),toolbarHeight: 80,centerTitle: true,elevation: 0,),
         body: Card(
           margin: EdgeInsets.all(0),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30))),
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30))),
           child: FutureBuilder(builder: (BuildContext context, AsyncSnapshot<DatabaseEvent> snapshot) {
             if(!snapshot.hasData) return Center(child: CircularProgressIndicator(color: Color(0xff5f259f),));
             if(!snapshot.data!.snapshot.exists){
