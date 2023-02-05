@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "760743352428",
+    "firebase_url": "https://monitorsleep-default-rtdb.firebaseio.com",
+    "project_id": "monitorsleep",
+    "storage_bucket": "monitorsleep.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760743352428:android:f3ddf518cd8a47263d2049",
+        "android_client_info": {
+          "package_name": "com.monitor.sleepmonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "760743352428-5kaohpef37fkb1d354ea415dciroirhp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monitor.sleepmonitor",
+            "certificate_hash": "acc1d7e131c153c988811f4f09b9fb387f362926"
+          }
+        },
+        {
+          "client_id": "760743352428-t2bm4sg37peoomk6mbdoqu6jbb3k2bgt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.monitor.sleepmonitor",
+            "certificate_hash": "6ff8c27d71266d358c20f61fe919833927b0fcf2"
+          }
+        },
+        {
+          "client_id": "760743352428-vu4svcl9uihdcgd7ikrgg6fsl79p62sh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDeP3wPrjBXJiNtDyo9x_GF9hvk2jQC288"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "760743352428-ssakdr5ufu3epm8hh5c95no8v3g6jljp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
