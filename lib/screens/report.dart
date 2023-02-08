@@ -255,11 +255,15 @@ class _ReportScreenState extends State<ReportScreen> {
 
   int durationScore() {
     int totalDuration=63;
-    totalDuration-= 5 * widget.answerList[0];
-    totalDuration+= 5 *widget.answerList[1];
-    totalDuration-= 2 * widget.answerList[2];
-    totalDuration+= 2 *widget.answerList[3];
-    return totalDuration;
+    if(widget.answerList[0] != -1) {
+      totalDuration -= 5 * widget.answerList[0];
+    }else {
+      return 0;
+    }
+      totalDuration+= 5 *widget.answerList[1];
+      totalDuration-= 2 * widget.answerList[2];
+      totalDuration+= 2 *widget.answerList[3];
+      return totalDuration;
   }
 
   bool regurality(){

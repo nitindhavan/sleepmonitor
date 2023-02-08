@@ -24,7 +24,7 @@ class _SurveyState extends State<Survey> {
   int currentSelected=-1;
 
 
-  List<int> answerList=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+  List<int> answerList=[-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1];
 
   @override
   Widget build(BuildContext context) {
