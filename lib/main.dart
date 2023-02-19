@@ -38,7 +38,12 @@ Future<void> setupFlutterNotifications() async {
 
   flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
 
+  const AndroidInitializationSettings initializationSettingsAndroid =
+  AndroidInitializationSettings('mipmap/ic_launcher');
   /// Create an Android Notification Channel.
+  final InitializationSettings initializationSettings = InitializationSettings(
+      android: initializationSettingsAndroid);
+  await flutterLocalNotificationsPlugin.initialize(initializationSettings);
   ///
   /// We use this channel in the `AndroidManifest.xml` file to override the
   /// default FCM channel to enable heads up notifications.
@@ -71,7 +76,7 @@ void showFlutterNotification(RemoteMessage message) {
           channelDescription: channel.description,
           // TODO add a proper drawable resource to android, for now using
           //      one that already exists in example app.
-          icon: 'launch_background',
+          icon: 'mipmap/ic_launcher',
         ),
       ),
     );

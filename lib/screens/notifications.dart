@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:sleepmonitor/main.dart';
 import 'package:sleepmonitor/models/notification.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class Notifications extends StatefulWidget {
-  const Notifications({Key? key}) : super(key: key);
+  const Notifications({Key? key, required this.notifications}) : super(key: key);
 
+  final List<String> notifications;
   @override
   State<Notifications> createState() => _NotificationsState();
 }
@@ -26,6 +29,13 @@ class _NotificationsState extends State<Notifications> {
               return Center(child: Text(local.nonotifications,style: TextStyle(color: Colors.black),),);
             }
             List<NotificationModel> notifications=[];
+            var sharep=SharedPreferences.getInstance();
+            sharep.then((value){
+              for(String s in widget.notifications){
+                value.setBool(s, true);
+              }
+            });
+
             for(DataSnapshot snap in snapshot.data!.snapshot.children){
               NotificationModel model=NotificationModel.fromJson(snap.value as Map);
               notifications.add(model);

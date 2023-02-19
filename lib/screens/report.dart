@@ -1,13 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sleepmonitor/screens/monthly_report.dart';
+
+import '../models/User.dart';
 
 class ReportScreen extends StatefulWidget {
-  const ReportScreen({Key? key,required this.answerList, required this.name}) : super(key: key);
+  const ReportScreen({Key? key,required this.answerList, required this.name,required this.user}) : super(key: key);
 
   final List<int> answerList;
 
   final String name;
+
+  final String user;
 
   @override
   State<ReportScreen> createState() => _ReportScreenState();
@@ -15,13 +20,25 @@ class ReportScreen extends StatefulWidget {
 
 class _ReportScreenState extends State<ReportScreen> {
 
+  bool isWeekly=true;
   @override
   Widget build(BuildContext context) {
     var local=AppLocalizations.of(context);
-    return SafeArea(child: Scaffold(
+    return SafeArea(
+        child: Scaffold(
       backgroundColor: Color(0xff5f259f),
-      appBar: AppBar(title: Text(local.report,textAlign: TextAlign.center,),toolbarHeight: 80,centerTitle: true,elevation: 0,),
-      body: Card(
+      appBar: AppBar(title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(child: Text(local.report,textAlign: TextAlign.right,)),
+          Expanded(child: GestureDetector(onTap: (){
+            setState(() {
+              isWeekly=!isWeekly;
+            });
+          },child: Container(alignment: Alignment.centerRight,child: Icon(Icons.change_circle_outlined,color: Colors.white,))))
+        ],
+      ),toolbarHeight: 80,centerTitle: true,elevation: 0,),
+      body: isWeekly? Card(
         margin: EdgeInsets.all(0),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30))),
         child: Padding(
@@ -135,61 +152,6 @@ class _ReportScreenState extends State<ReportScreen> {
                     ),
                   ),
                   Card(
-                    margin: EdgeInsets.all(16),
-                    color: Color(0xffe5e5ff),
-                    child: Container(
-                      padding: EdgeInsets.all(16),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(local.overallHealth,style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),),
-                          SizedBox(height: 32,),
-                          Stack(
-                            children: [
-                              Container(height: 70,margin: EdgeInsets.only(top : 16,bottom: 16),decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.redAccent,Colors.greenAccent])),),
-                              Column(
-                                children: [
-                                  Row(children: [
-                                    Expanded(flex: grandTotal(),child: SizedBox()),
-                                    Column(
-                                      children: [
-                                        Container(width: 5,height: 100,color: Colors.black,),
-                                        SizedBox(height: 20,),
-                                      ],
-                                    ),
-                                    Expanded(flex: 16-grandTotal(),child: SizedBox()),
-                                  ],),
-                                  Row(
-                                    children: [
-                                      Expanded(flex: grandTotal(),child: SizedBox()),
-                                      Column(
-                                        children: [
-                                          Container(
-                                            height: 60,
-                                            width: 60,
-                                            decoration: BoxDecoration(
-                                                color: Colors.white,
-                                                borderRadius: BorderRadius.circular(60)
-                                            ),
-                                            child: ClipRRect(borderRadius: BorderRadius.circular(60),child: Image.asset(grandTotal() >= 11 ? 'happy.png' : grandTotal() >= 6 ? 'smile.png' : 'sademoji.png',height: 60,width: 60,)),
-                                          ),
-                                          SizedBox(height: 8,),
-                                          Text('${local.score} : ${grandTotal()}',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.black),textAlign: TextAlign.center,),
-                                        ],
-                                      ),
-                                      Expanded(flex: 16-grandTotal(),child: SizedBox()),
-                                    ],
-                                  ),
-
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  Card(
                     color: Color(0xffe5e5ff),
                     margin: EdgeInsets.all(16),
                     child: Container(
@@ -244,12 +206,67 @@ class _ReportScreenState extends State<ReportScreen> {
                       ),
                     ),
                   ),
+                  Card(
+                    margin: EdgeInsets.all(16),
+                    color: Color(0xffe5e5ff),
+                    child: Container(
+                      padding: EdgeInsets.all(16),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(local.overallHealth,style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.bold),),
+                          SizedBox(height: 32,),
+                          Stack(
+                            children: [
+                              Container(height: 70,margin: EdgeInsets.only(top : 16,bottom: 16),decoration: BoxDecoration(gradient: LinearGradient(colors: [Colors.redAccent,Colors.greenAccent])),),
+                              Column(
+                                children: [
+                                  Row(children: [
+                                    Expanded(flex: grandTotal(),child: SizedBox()),
+                                    Column(
+                                      children: [
+                                        Container(width: 5,height: 100,color: Colors.black,),
+                                        SizedBox(height: 20,),
+                                      ],
+                                    ),
+                                    Expanded(flex: 16-grandTotal(),child: SizedBox()),
+                                  ],),
+                                  Row(
+                                    children: [
+                                      Expanded(flex: grandTotal(),child: SizedBox()),
+                                      Column(
+                                        children: [
+                                          Container(
+                                            height: 60,
+                                            width: 60,
+                                            decoration: BoxDecoration(
+                                                color: Colors.white,
+                                                borderRadius: BorderRadius.circular(60)
+                                            ),
+                                            child: ClipRRect(borderRadius: BorderRadius.circular(60),child: Image.asset(grandTotal() >= 11 ? 'happy.png' : grandTotal() >= 6 ? 'smile.png' : 'sademoji.png',height: 60,width: 60,)),
+                                          ),
+                                          SizedBox(height: 8,),
+                                          Text('${local.score} : ${grandTotal()}',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.black),textAlign: TextAlign.center,),
+                                        ],
+                                      ),
+                                      Expanded(flex: 16-grandTotal(),child: SizedBox()),
+                                    ],
+                                  ),
+
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
         ),
-      ),
+      ) : MonthlyReport(user: widget.user),
     ));
   }
 
@@ -265,6 +282,7 @@ class _ReportScreenState extends State<ReportScreen> {
       totalDuration+= 2 *widget.answerList[3];
       return totalDuration;
   }
+
 
   bool regurality(){
     return widget.answerList[0] - widget.answerList[1] == widget.answerList[2]- widget.answerList[3];

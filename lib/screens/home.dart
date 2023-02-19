@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:sleepmonitor/models/notification.dart';
 import 'package:sleepmonitor/screens/aboutus.dart';
 import 'package:sleepmonitor/screens/notifications.dart';
 import 'package:sleepmonitor/screens/profile.dart';
@@ -7,7 +8,6 @@ import 'package:sleepmonitor/screens/recommendations.dart';
 import 'package:sleepmonitor/screens/register.dart';
 import 'package:sleepmonitor/screens/report.dart';
 import 'package:sleepmonitor/screens/survey.dart';
-import 'package:video_player/video_player.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -16,6 +16,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import 'package:sleepmonitor/models/Survey.dart' as model;
 
 import 'package:sleepmonitor/models/User.dart' as user;
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../data/constants.dart';
 import 'contact.dart';
@@ -41,6 +42,9 @@ class _HomePageState extends State<HomePage> {
   bool visible=false;
 
   String name='Student';
+
+
+  List<String> notifications=[];
 
   @override
   Widget build(BuildContext context) {
@@ -95,18 +99,24 @@ class _HomePageState extends State<HomePage> {
                 }
                 return Text(textAlign: TextAlign.start,local.studentName,style: const TextStyle(color: Colors.white,fontSize: 16,fontWeight: FontWeight.w800),);
               },stream: FirebaseDatabase.instance.ref('users').child(FirebaseAuth.instance.currentUser!.uid).onValue,)),
-              GestureDetector(
-                onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=> Notifications())),
-                child: Container(
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(40),
-                      color: const Color(0xff5f259f)
-                  ),
-                  child: Icon(Icons.notifications,color: Colors.white,),
-                ),
-              ),
+              StreamBuilder(builder: (BuildContext context, AsyncSnapshot<DatabaseEvent> snapshot) {
+                if(!snapshot.hasData) return Container(height: 20,width: 20,margin:EdgeInsets.all(8),child: CircularProgressIndicator(color: Colors.white));
+                return FutureBuilder(builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
+                  if(!snapshot.hasData) return Container(height: 20,width: 20,margin:EdgeInsets.all(8),child: CircularProgressIndicator(color: Colors.white));
+                  return GestureDetector(
+                    onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=> Notifications(notifications: notifications))),
+                    child: Container(
+                      height: 40,
+                      width: 40,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
+                          color: const Color(0xff5f259f)
+                      ),
+                      child: Icon(snapshot.data == true ?Icons.notifications : Icons.notifications_active,color: Colors.white,),
+                    ),
+                  );
+                },future: getData(),);
+              },stream: FirebaseDatabase.instance.ref('notifications').onValue,),
             ],
           ),),),
         body: Card(
@@ -236,6 +246,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -292,6 +303,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -348,6 +360,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -404,6 +417,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -460,6 +474,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -516,6 +531,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -572,6 +588,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -628,6 +645,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -684,6 +702,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -740,6 +759,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -796,6 +816,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -852,6 +873,7 @@ class _HomePageState extends State<HomePage> {
                                                       builder: (context) =>
                                                       found
                                                           ? ReportScreen(
+                                                        user: selected!.uid,
                                                         answerList: selected!.answers,
                                                         name: name,)
                                                           : Survey(name: name,
@@ -982,6 +1004,22 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+  Future<bool> getData() async {
+    bool read=true;
+    await FirebaseDatabase.instance.ref('notifications').once().then((value) async {
+      notifications.clear();
+      var sharep=await SharedPreferences.getInstance();
+      for(DataSnapshot snap in value.snapshot.children){
+        NotificationModel model=NotificationModel.fromJson(snap.value as Map);
+        notifications.add(model.id);
+        if(sharep.getBool(model.id)==null){
+          print(sharep.getBool(model.id));
+          read=false;
+        }
+      }
+    });
+    return read;
   }
 }
 class CustomTextField extends StatelessWidget {

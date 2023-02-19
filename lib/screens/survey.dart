@@ -60,8 +60,12 @@ class _SurveyState extends State<Survey> {
                         setState(() {
                           if(number<21) {
                             answerList[number-1] =currentSelected;
-                            number++;
-                            currentSelected=answerList[number-1];
+                            if(currentSelected!=-1) {
+                              number++;
+                              currentSelected = answerList[number - 1];
+                            }else{
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Please select something!')));
+                            }
                           }else{
                             Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> CompletedScreen(answerList: answerList, name: widget.name,week: widget.week, title: widget.title,)));
                           }
@@ -128,8 +132,12 @@ class _SurveyState extends State<Survey> {
           Future.delayed(Duration(milliseconds: 300)).then((value){
             setState((){
               if(number<21) {
-                number++;
-                currentSelected = -1;
+                if(currentSelected!=-1) {
+                  number++;
+                  currentSelected = answerList[number - 1];
+                }else{
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Please select something!')));
+                }
               }else{
                 Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> CompletedScreen(answerList: answerList, name: widget.name,week: widget.week, title: widget.title,)));
               }

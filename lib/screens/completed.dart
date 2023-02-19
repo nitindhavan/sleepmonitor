@@ -25,9 +25,9 @@ class _CompletedScreenState extends State<CompletedScreen> {
     var local=AppLocalizations.of(context);
     Future.delayed(Duration(seconds: 1)).then((value) {
       var reference=FirebaseDatabase.instance.ref('surveys');
-      Survey survey=Survey(FirebaseAuth.instance.currentUser!.uid, reference.push().key!, widget.week, widget.answerList);
+      Survey survey=Survey(FirebaseAuth.instance.currentUser!.uid, reference.push().key!, widget.week, widget.answerList,DateTime.now());
       reference.child(survey.id).set(survey.toMap()).then((value){
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ReportScreen(answerList: widget.answerList,name: widget.name,)));
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> ReportScreen(answerList: widget.answerList,name: widget.name,user: FirebaseAuth.instance.currentUser!.uid,)));
       });
     });
     return SafeArea(
