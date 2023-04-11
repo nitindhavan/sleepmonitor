@@ -4,6 +4,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:sleepmonitor/screens/monthly_report.dart';
 
 import '../models/User.dart';
+import 'multi_month_report.dart';
 
 class ReportScreen extends StatefulWidget {
   const ReportScreen({Key? key,required this.answerList, required this.name,required this.user}) : super(key: key);
@@ -20,7 +21,7 @@ class ReportScreen extends StatefulWidget {
 
 class _ReportScreenState extends State<ReportScreen> {
 
-  bool isWeekly=true;
+  int isWeekly=0;
   @override
   Widget build(BuildContext context) {
     var local=AppLocalizations.of(context);
@@ -33,12 +34,13 @@ class _ReportScreenState extends State<ReportScreen> {
           Expanded(child: Text(local.report,textAlign: TextAlign.right,)),
           Expanded(child: GestureDetector(onTap: (){
             setState(() {
-              isWeekly=!isWeekly;
+              isWeekly++;
+              if(isWeekly==3) isWeekly=0;
             });
           },child: Container(alignment: Alignment.centerRight,child: Icon(Icons.change_circle_outlined,color: Colors.white,))))
         ],
       ),toolbarHeight: 80,centerTitle: true,elevation: 0,),
-      body: isWeekly? Card(
+      body: isWeekly==0? Card(
         margin: EdgeInsets.all(0),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30))),
         child: Padding(
@@ -266,7 +268,7 @@ class _ReportScreenState extends State<ReportScreen> {
             ),
           ),
         ),
-      ) : MonthlyReport(user: widget.user),
+      ) : isWeekly==1 ? MonthlyReport(user: widget.user) : MultiMonthReport(user: widget.user,),
     ));
   }
 

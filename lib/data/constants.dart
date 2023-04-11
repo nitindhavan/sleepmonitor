@@ -2,7 +2,7 @@ import 'package:sleepmonitor/models/Question.dart';
 
 List<Question> questions=[
   Question("1.Mostly at what time did your child get into bed these weekdays (Monday-Friday)?", ["Before 9 pm","Between 9-10 pm","Between 10-11 pm","Between 11-12 pm","After 12 am"]),
-  Question("Mostly at what time did your child get up from bed these weekdays (Monday-Friday)?", ["Before 6 am","Between 6-7 am","Between 7-8 am","Between 8-9 am","After 9 am"]),
+  Question("2.Mostly at what time did your child get up from bed these weekdays (Monday-Friday)?", ["Before 6 am","Between 6-7 am","Between 7-8 am","Between 8-9 am","After 9 am"]),
   Question("3.Mostly at what time did your child get into bed this weekend (Saturday-Sunday)?", ["Before 9 pm","Between 9-10 pm","Between 10-11 pm","Between 11-12 pm","After 12 am"]),
   Question("4.Mostly at what time did your child get up from bed this weekend (Saturday-Sunday)?", ["Before 6 am","Between 6-7 am","Between 7-8 am","Between 8-9 am","After 9 am"]),
   Question("5.How many times did your child napped during day (for>30min) time this week?", ["0 times","1-2 times","3-4 times","5-6 times","Everyday"]),
@@ -11,7 +11,7 @@ List<Question> questions=[
   Question("8.How many times in a week your child had caffeinated beverages (e.g., soda/tea/coffee/cold drink/energy drinks etc)?", ["0 times","1-2 times","3-4 times","5-6 times","Everyday"]),
   Question("9.Throughout the week, mood of your child was...", ["Energetic / refreshed","Pleasant / Calm","Irritated / fatigued","Anxious","Sad/ depressed "]),
   Question("10.About one hour before going to sleep, mostly this week bedtime routine of your child included:", ["use of electronics (e.g., cell phone, iPad/tablet, Computer, TV, Video games)","read books/ homework","took bath","did relaxing exercise (meditation, deep breathing, yoga)","did heavy exercise"]),
-  Question("11.How long was your child’s screen time (e.g., usage of cell phone, iPad/tablet, Computer, TV, Video games) this week?(Excluding the time your child used any kind of electronic devices for academic purpose).", ["0-2 hrs","3-5 hrs","6-8 hrs","9-12 hrs","More than 12 hrs"]),
+  Question("11.How long was your child’s screen time in hours per day (e.g., usage of cell phone, iPad/tablet, Computer, TV, Video games) this week?(Excluding the time your child used any kind of electronic devices for academic purpose).", ["0-2 hrs","3-5 hrs","6-8 hrs","9-12 hrs","More than 12 hrs"]),
   Question("12.Does your child get 8 hours of sleep at night?", ["Yes","No"]),
   Question("13.Does your child sleep and wake up at the same time every day?", ["Yes","No"]),
   Question("14.Does your child use the bed only for sleeping?", ["Yes","No"]),

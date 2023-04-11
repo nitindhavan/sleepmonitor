@@ -62,5 +62,13 @@
   "surveys": "सर्वेक्षण",
   "register": "पंजीकरण",
   "signIn": "साइन इन",
-  "contactAndRecommendation": "संपर्क और सिफारिश"
+  "contactAndRecommendation": "संपर्क और सिफारिश",
+  "noSurvey": "अभी तक कोई सर्वेक्षण सबमिट नहीं किया गया है",
+  "month": "महीना",
+  "nap": "झपकी",
+  "screenTime": "स्क्रीन टाइम",
+  "mood": "मनोदशा",
+  "cafinatedBeverages": "कैफीनयुक्त पेय पदार्थ",
+  "physical": "शारीरिक व्यायाम / खेल गतिविधि",
+  "junkFood": "जंक फूड"
 }

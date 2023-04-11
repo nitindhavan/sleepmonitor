@@ -62,5 +62,14 @@
   "surveys": "Surveys",
   "register": "Register",
   "signIn": "Sign In",
-  "contactAndRecommendation": "Contact And Recommendation"
+  "contactAndRecommendation": "Contact And Recommendation",
+  "noSurvey": "No Survey Submitted yet",
+  "month": "Month",
+  "nap": "Nap",
+  "screenTime": "Screen Time",
+  "mood": "Mood",
+  "cafinatedBeverages": "Caffeinated Beverages",
+  "physical": "Physical exercise / Sports Activity",
+  "junkFood": "Junk Food"
+
 }

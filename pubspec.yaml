@@ -40,6 +40,7 @@ dependencies:
   carousel_slider: ^4.2.1
   youtube_player_flutter: ^8.1.2
   url_launcher: ^6.1.8
+  animated_emoji: ^1.0.1+2
 
 dev_dependencies:
   flutter_test:
@@ -81,3 +82,21 @@ flutter:
     - picture3.png
     - picture4.png
     - picture5.png
+    - burger.png
+    - can.png
+    - cofee.png
+    - coke.png
+    - coldrink.png
+    - game.jpg
+    - laptop.png
+    - noodles.png
+    - phone.png
+    - pizza.png
+    - samosa.png
+    - tea.png
+    - tv.jpg
+    - calm.gif
+    - anxious.gif
+    - irritated.gif
+    - energetic.gif
+    - woried.gif
