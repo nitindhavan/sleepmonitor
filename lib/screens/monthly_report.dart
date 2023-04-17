@@ -122,35 +122,35 @@ class _MonthlyReportState extends State<MonthlyReport> {
                             SizedBox(height: 200,),
                             Bar(height: (surveyList[0].answers[6])*50,label: Text('${local.week} 1'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('samosa.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/samosa.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(surveyList[0].answers,6),),
                               ],
                             )),
                             if(surveyList.length>1)Bar(height: (surveyList[1].answers[6])*50,label: Text('${local.week} 2'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('pizza.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/pizza.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(surveyList[1].answers,6),),
                               ],
                             )),
                             if(surveyList.length>2)Bar(height: (surveyList[2].answers[6])*50,label: Text('${local.week} 3'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('noodles.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/noodles.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(surveyList[2].answers,6),),
                               ],
                             )),
                             if(surveyList.length>3)Bar(height: (surveyList[3].answers[6])*50,label: Text('${local.week} 4'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('burger.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/burger.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(surveyList[3].answers,6),),
                               ],
                             )),
                             if(surveyList.length>4)Bar(height: (surveyList[4].answers[6])*50,label: Text('${local.week} 5'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('samosa.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/samosa.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(surveyList[4].answers,6),),
                               ],
@@ -173,35 +173,35 @@ class _MonthlyReportState extends State<MonthlyReport> {
                             SizedBox(height: 200,),
                             Bar(height: (surveyList[0].answers[7])*50,label: Text('${local.week} 1'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('tea.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/tea.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(surveyList[0].answers,7),),
                               ],
                             )),
                             if(surveyList.length>1)Bar(height: (surveyList[1].answers[7])*50,label: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('can.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/can.png'),)),
                                 SizedBox(height: 8,),
                                 Text('${local.week} 2'),
                               ],
                             ),topLabel: Text(getNapData(surveyList[1].answers,7),)),
                             if(surveyList.length>2)Bar(height: (surveyList[2].answers[7])*50,label: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('cofee.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/cofee.png'),)),
                                 SizedBox(height: 8,),
                                 Text('${local.week} 3'),
                               ],
                             ),topLabel: Text(getNapData(surveyList[2].answers,7),)),
                             if(surveyList.length>3)Bar(height: (surveyList[3].answers[7])*50,label: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('coke.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/coke.png'),)),
                                 SizedBox(height: 8,),
                                 Text('${local.week} 4'),
                               ],
                             ),topLabel: Text(getNapData(surveyList[3].answers,7),)),
                             if(surveyList.length>4)Bar(height: (surveyList[4].answers[7])*50,label: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('coldrink.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/coldrink.png'),)),
                                 SizedBox(height: 8,),
                                 Text('${local.week} 5'),
                               ],
@@ -245,35 +245,35 @@ class _MonthlyReportState extends State<MonthlyReport> {
                             SizedBox(height: 200,),
                             Bar(height: (surveyList[0].answers[9])*50,label: Text('${local.week} 1'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('game.jpg'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/game.jpg'),)),
                                 SizedBox(height: 8,),
                                 Text(getScreenData(surveyList[0].answers,9),),
                               ],
                             )),
                             if(surveyList.length>1)Bar(height: (surveyList[1].answers[9])*50,label: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('laptop.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/laptop.png'),)),
                                 SizedBox(height: 8,),
                                 Text('${local.week} 2'),
                               ],
                             ),topLabel: Text(getScreenData(surveyList[1].answers,9),)),
                             if(surveyList.length>2)Bar(height: (surveyList[2].answers[9])*50,label: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('phone.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/phone.png'),)),
                                 SizedBox(height: 8,),
                                 Text('${local.week} 3'),
                               ],
                             ),topLabel: Text(getScreenData(surveyList[2].answers,9),)),
                             if(surveyList.length>3)Bar(height: (surveyList[3].answers[9])*50,label: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('tv.jpg'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/tv.jpg'),)),
                                 SizedBox(height: 8,),
                                 Text('${local.week} 4'),
                               ],
                             ),topLabel: Text(getScreenData(surveyList[3].answers,9),)),
                             if(surveyList.length>4)Bar(height: (surveyList[4].answers[9])*50,label: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('game.jpg'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/game.jpg'),)),
                                 SizedBox(height: 8,),
                                 Text('${local.week} 5'),
                               ],
@@ -360,31 +360,31 @@ class _MonthlyReportState extends State<MonthlyReport> {
       case 0:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('energetic.gif',height: 50,width: 50))),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/energetic.gif',height: 50,width: 50))),
           ],
         );
       case 1:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('calm.gif',height: 50,width: 50))),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/calm.gif',height: 50,width: 50))),
           ],
         );
       case 2:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('irritated.gif',height: 50,width: 50)),),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/irritated.gif',height: 50,width: 50)),),
           ],
         );
       case 3:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('anxious.gif',height: 50,width: 50))),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/anxious.gif',height: 50,width: 50))),
           ],
         );
       default:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('woried.gif',height: 50,width: 50))),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/woried.gif',height: 50,width: 50))),
           ],
         );
     }

@@ -17,7 +17,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 2.0.0+2
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
@@ -72,31 +72,31 @@ flutter:
   generate: true
   # To add assets to your application, add an assets section, like this:
   assets:
-    - sleep.png
-    - happy.png
-    - sademoji.png
-    - smile.png
-    - icon.png
-    - picture1.png
-    - picture2.png
-    - picture3.png
-    - picture4.png
-    - picture5.png
-    - burger.png
-    - can.png
-    - cofee.png
-    - coke.png
-    - coldrink.png
-    - game.jpg
-    - laptop.png
-    - noodles.png
-    - phone.png
-    - pizza.png
-    - samosa.png
-    - tea.png
-    - tv.jpg
-    - calm.gif
-    - anxious.gif
-    - irritated.gif
-    - energetic.gif
-    - woried.gif
+    - assets/sleep.png
+    - assets/happy.png
+    - assets/sademoji.png
+    - assets/smile.png
+    - assets/icon.png
+    - assets/picture1.png
+    - assets/picture2.png
+    - assets/picture3.png
+    - assets/picture4.png
+    - assets/picture5.png
+    - assets/burger.png
+    - assets/can.png
+    - assets/cofee.png
+    - assets/coke.png
+    - assets/coldrink.png
+    - assets/game.jpg
+    - assets/laptop.png
+    - assets/noodles.png
+    - assets/phone.png
+    - assets/pizza.png
+    - assets/samosa.png
+    - assets/tea.png
+    - assets/tv.jpg
+    - assets/calm.gif
+    - assets/anxious.gif
+    - assets/irritated.gif
+    - assets/energetic.gif
+    - assets/woried.gif

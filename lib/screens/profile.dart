@@ -68,7 +68,7 @@ class _ProfileState extends State<Profile> {
                     child: Container(height: 120,width: 120,padding: EdgeInsets.all(8),decoration: BoxDecoration(
                       color: Color(0xffe5e5ff),
                       borderRadius: BorderRadius.circular(120),
-                    ),child: widget.user.imageUrl == null ? Image.asset('sleep.png') : ClipRRect(borderRadius: BorderRadius.circular(120),child: Image.network(widget.user.imageUrl!,fit: BoxFit.cover,height: 120,width: 120,)),),
+                    ),child: widget.user.imageUrl == null ? Image.asset('assets/sleep.png') : ClipRRect(borderRadius: BorderRadius.circular(120),child: Image.network(widget.user.imageUrl!,fit: BoxFit.cover,height: 120,width: 120,)),),
                   ),
                   GestureDetector(
                       onTap: () async {

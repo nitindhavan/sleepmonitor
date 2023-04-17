@@ -48,7 +48,7 @@ class _SignState extends State<Sign> {
                   child: Container(
                     margin: EdgeInsets.all(16),
                     child: Image.asset(
-                      'icon.png',
+                      'assets/icon.png',
                       height: 200,
                     ),
                   ),

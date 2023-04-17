@@ -138,21 +138,21 @@ class _MultiMonthReportState extends State<MultiMonthReport> {
                             SizedBox(height: 200,),
                             Bar(height: (getHeight(getNapData(firstList, 6)))*50,label: Text('${local.month} 1'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('burger.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/burger.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(firstList,6),),
                               ],
                             )),
                             if(secondList.isNotEmpty)Bar(height: getHeight(getNapData(secondList, 6))*50,label: Text('${local.month} 2'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('pizza.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/pizza.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(secondList,6),),
                               ],
                             )),
                             if(thirdList.isNotEmpty)Bar(height: getHeight(getNapData(secondList, 6))*50,label: Text('${local.month} 3'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('samosa.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/samosa.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(thirdList,6),),
                               ],
@@ -175,21 +175,21 @@ class _MultiMonthReportState extends State<MultiMonthReport> {
                             SizedBox(height: 200,),
                             Bar(height: (getHeight(getNapData(firstList, 7)))*50,label: Text('${local.month} 1'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('can.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/can.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(firstList,7),),
                               ],
                             )),
                             if(secondList.isNotEmpty)Bar(height: getHeight(getNapData(secondList, 7))*50,label: Text('${local.month} 2'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('cofee.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/cofee.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(secondList,7),),
                               ],
                             )),
                             if(thirdList.isNotEmpty)Bar(height: getHeight(getNapData(secondList, 7))*50,label: Text('${local.month} 3'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('tea.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/tea.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getNapData(thirdList,7),),
                               ],
@@ -231,21 +231,21 @@ class _MultiMonthReportState extends State<MultiMonthReport> {
                             SizedBox(height: 200,),
                             Bar(height: (getHeight(getNapData(firstList, 9)))*50,label: Text('${local.month} 1'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('game.jpg'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/game.jpg'),)),
                                 SizedBox(height: 8,),
                                 Text(getScreenData(firstList,9),),
                               ],
                             )),
                             if(secondList.isNotEmpty)Bar(height: getHeight(getNapData(secondList, 9))*50,label: Text('${local.month} 2'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('laptop.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/laptop.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getScreenData(secondList,9),),
                               ],
                             )),
                             if(thirdList.isNotEmpty)Bar(height: getHeight(getNapData(secondList, 9))*50,label: Text('${local.month} 3'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('phone.png'),)),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/phone.png'),)),
                                 SizedBox(height: 8,),
                                 Text(getScreenData(thirdList,9),),
                               ],
@@ -379,31 +379,31 @@ class _MultiMonthReportState extends State<MultiMonthReport> {
       case 0:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('energetic.gif',height: 50,width: 50))),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/energetic.gif',height: 50,width: 50))),
           ],
         );
       case 1:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('calm.gif',height: 50,width: 50))),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/calm.gif',height: 50,width: 50))),
           ],
         );
       case 2:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('irritated.gif',height: 50,width: 50)),),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/irritated.gif',height: 50,width: 50)),),
           ],
         );
       case 3:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('anxious.gif',height: 50,width: 50))),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/anxious.gif',height: 50,width: 50))),
           ],
         );
       default:
         return Column(
           children: [
-            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('woried.gif',height: 50,width: 50))),
+            ClipRRect(borderRadius: BorderRadius.circular(50),child : Container(color: Colors.white,child: Image.asset('assets/woried.gif',height: 50,width: 50))),
           ],
         );
     }

@@ -190,7 +190,7 @@ class _ReportScreenState extends State<ReportScreen> {
                                                 color: Colors.white,
                                                 borderRadius: BorderRadius.circular(60)
                                             ),
-                                            child: ClipRRect(borderRadius: BorderRadius.circular(60),child: Image.asset(sleepHygine() >= 7 ? 'happy.png' : sleepHygine() >= 5 ? 'smile.png' : 'sademoji.png',height: 60,width: 60,)),
+                                            child: ClipRRect(borderRadius: BorderRadius.circular(60),child: Image.asset(sleepHygine() >= 7 ? 'assets/happy.png' : sleepHygine() >= 5 ? 'assets/smile.png' : 'assets/sademoji.png',height: 60,width: 60,)),
                                           ),
                                           SizedBox(height: 8,),
                                           Text('${local.score} : ${sleepHygine()}',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.black),textAlign: TextAlign.center,),
@@ -245,7 +245,7 @@ class _ReportScreenState extends State<ReportScreen> {
                                                 color: Colors.white,
                                                 borderRadius: BorderRadius.circular(60)
                                             ),
-                                            child: ClipRRect(borderRadius: BorderRadius.circular(60),child: Image.asset(grandTotal() >= 11 ? 'happy.png' : grandTotal() >= 6 ? 'smile.png' : 'sademoji.png',height: 60,width: 60,)),
+                                            child: ClipRRect(borderRadius: BorderRadius.circular(60),child: Image.asset(grandTotal() >= 11 ? 'assets/happy.png' : grandTotal() >= 6 ? 'assets/smile.png' : 'assets/sademoji.png',height: 60,width: 60,)),
                                           ),
                                           SizedBox(height: 8,),
                                           Text('${local.score} : ${grandTotal()}',style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.black),textAlign: TextAlign.center,),

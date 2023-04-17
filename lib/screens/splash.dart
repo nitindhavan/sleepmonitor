@@ -28,7 +28,7 @@ class Splash extends StatelessWidget {
           padding: EdgeInsets.all(16),
           child: ClipRRect(
             child: Image.asset(
-              'icon.png',
+              'assets/icon.png',
               height: 170,
               width: 170,
             ),

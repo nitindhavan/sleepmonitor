@@ -86,7 +86,7 @@ class _HomePageState extends State<HomePage> {
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(50),
                               color: Color(0xff5f259f),                          ),
-                          child: u.imageUrl ==null ? ClipRRect(borderRadius: BorderRadius.circular(40),child: Image.asset("sleep.png",height: 40,width: 40,)) : ClipRRect(borderRadius: BorderRadius.circular(40),child: Image.network(u.imageUrl!,height: 40,width: 40,fit: BoxFit.cover,)),
+                          child: u.imageUrl ==null ? ClipRRect(borderRadius: BorderRadius.circular(40),child: Image.asset("assets/sleep.png",height: 40,width: 40,)) : ClipRRect(borderRadius: BorderRadius.circular(40),child: Image.network(u.imageUrl!,height: 40,width: 40,fit: BoxFit.cover,)),
                         ),
                       ),
                       Text(textAlign: TextAlign.start,u.name,style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w600),),
