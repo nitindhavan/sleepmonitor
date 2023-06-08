@@ -129,8 +129,7 @@ class _MonthlyReportState extends State<MonthlyReport> {
                             )),
                             if(surveyList.length>1)Bar(height: (surveyList[1].answers[6])*50,label: Text('${local.week} 2'),topLabel: Column(
                               children: [
-                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/pizza.png'),)),
-                                SizedBox(height: 8,),
+                                ClipRRect(borderRadius: BorderRadius.circular(50),child: Container(color: Colors.white,height: 40,width: 40,child: Image.asset('assets/pizza.png'),)), SizedBox(height: 8,),
                                 Text(getNapData(surveyList[1].answers,6),),
                               ],
                             )),

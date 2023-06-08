@@ -132,7 +132,7 @@ class _HomePageState extends State<HomePage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                         children:[
-                          CarouselSlider(items: List<int>.generate(21, (i) => i + 1).map((i) {
+                          CarouselSlider(items: List<int>.generate(19, (i) => i + 1).map((i) {
                             return Builder(
                               builder: (BuildContext context) {
                                 return Card(
