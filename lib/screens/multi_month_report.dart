@@ -58,9 +58,10 @@ class _MultiMonthReportState extends State<MultiMonthReport> {
               List<Survey> thirdList=[];
 
               for(Survey s in surveyList){
-                if(s.dateTime.month==firstMonth) firstList.add(s);
-                if(s.dateTime.month==secondMonth) secondList.add(s);
-                if(s.dateTime.month==thirdMonth) thirdList.add(s);
+                int week=int.parse(s.week.replaceAll("Week", ""))-1;
+                if(week==0 || week==1|| week==2 || week==3) firstList.add(s);
+                if(week==4 || week==5|| week==6 || week==7) secondList.add(s);
+                if(week==8 || week==9|| week==10 || week==11) thirdList.add(s);
               }
 
               for(int i=1 ; i<=12;i++){
