@@ -22,6 +22,8 @@ class ReportScreen extends StatefulWidget {
 class _ReportScreenState extends State<ReportScreen> {
 
   int isWeekly=0;
+
+  String _selectedItem="Report";
   @override
   Widget build(BuildContext context) {
     var local=AppLocalizations.of(context);
@@ -29,15 +31,38 @@ class _ReportScreenState extends State<ReportScreen> {
         child: Scaffold(
       backgroundColor: Color(0xff5f259f),
       appBar: AppBar(title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Expanded(child: Text(local.report,textAlign: TextAlign.right,)),
-          Expanded(child: GestureDetector(onTap: (){
-            setState(() {
-              isWeekly++;
-              if(isWeekly==3) isWeekly=0;
-            });
-          },child: Container(alignment: Alignment.centerRight,child: Icon(Icons.change_circle_outlined,color: Colors.white,))))
+          Text(local.report,textAlign: TextAlign.start,),
+          DropdownButtonHideUnderline(
+              child:DropdownButton<String>(
+                alignment: Alignment.centerRight,
+                value: _selectedItem,
+                hint: Text('Select an option'),
+                items: <String>[
+                  'Report',
+                  'Weekly Report',
+                  'Monthly Report',
+                ].map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value,style: TextStyle(color: value!=_selectedItem ? Colors.black: Colors.amber),),
+                  );
+                }).toList(),
+                onChanged: (value){
+                  if(value=='Report'){
+                    isWeekly=0;
+                  }else if(value=='Weekly Report'){
+                    isWeekly=1;
+                  }else{
+                    isWeekly=2;
+                  }
+                  setState(() {
+                    isWeekly;
+                    _selectedItem=value!;
+                  });
+                }
+              )),
         ],
       ),toolbarHeight: 80,centerTitle: true,elevation: 0,),
       body: isWeekly==0? Card(
