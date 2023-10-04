@@ -38,7 +38,7 @@ class _MultiMonthReportState extends State<MultiMonthReport> {
               DateTime currentDate=DateTime.now();
               for(DataSnapshot snap in snapshot.data!.snapshot.children) {
                 Survey survey = Survey.fromJson(snap.value as Map);
-                if(survey.dateTime.month==currentDate.month)surveyList.add(survey);
+                surveyList.add(survey);
               }
 
               surveyList.sort((a, b) => a.dateTime.compareTo(b.dateTime));

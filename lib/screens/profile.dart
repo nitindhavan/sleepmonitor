@@ -49,7 +49,7 @@ class _ProfileState extends State<Profile> {
                         sharep.getString('languagecode')=='hi' ? sharep.setString('languagecode','en'): sharep.setString('languagecode','hi');
                         MyApp.of(context)?.setLocale(Locale.fromSubtags(languageCode: sharep.getString('languagecode')??'hi '));
                       });
-                    },child: Container(height: 50,width: 50,decoration: BoxDecoration(color: Color(0xff5f259f),borderRadius: BorderRadius.circular(20)),child: Icon(Icons.language,color: Colors.white,),)),
+                    },child: Container(height: 50,width: 50,decoration: BoxDecoration(color: Color(0xff5f259f),borderRadius: BorderRadius.circular(20)),child: Image.asset('assets/language.png',fit: BoxFit.cover),)),
                   ),
                   Container(
                     margin: EdgeInsets.all(16),
@@ -57,7 +57,7 @@ class _ProfileState extends State<Profile> {
                       auth.FirebaseAuth.instance.signOut().then((value){
                         Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> Sign()));
                       });
-                    },child: Container(height: 50,width: 50,decoration: BoxDecoration(color: Color(0xff5f259f),borderRadius: BorderRadius.circular(20)),child: Icon(Icons.logout,color: Colors.white,),)),
+                    },child: Container(height: 40,width: 40,decoration: BoxDecoration(color: Color(0xff5f259f),borderRadius: BorderRadius.circular(20)),child: Icon(Icons.logout,color: Colors.white,),)),
                   ),
                 ],
               ),

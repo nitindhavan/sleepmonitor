@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:sleepmonitor/models/User.dart';
 import 'package:sleepmonitor/models/Survey.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class MonthlyReport extends StatefulWidget {

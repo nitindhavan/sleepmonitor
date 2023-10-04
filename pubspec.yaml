@@ -1,7 +1,7 @@
 name: sleepmonitor
 description: A new Flutter project.
 publish_to: 'none'
-version: 4.0.0+4
+version: 6.0.0+6
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
@@ -68,3 +68,4 @@ flutter:
     - assets/irritated.gif
     - assets/energetic.gif
     - assets/woried.gif
+    - assets/language.png
